@@ -1,20 +1,9 @@
-n = int(input())
-id,mass = [],[]
-leng = 0
-id2 = []
-for _ in range(n):
-    id.append(int(input()))
-    c = list(map(int, input().split()))
-    mass.append(c)
-    leng += id[_]
-    id2.append(c[0])
-k = []
-for i in range(leng):
-    mv = 100001
-    ll = 0
-    for i in id2:
-        mv = min(i,mv)
-        ll = i
-    k.append(mv)
-    id2[ll] = mass
-print(' '.join(str(i) for i in k))
+n, m = map(int, input().split())
+A = []
+for i in range(n):
+    a = list(map(int, input().split()))
+    A.append(a)
+for i in range(m):
+    for j in range(n - 1, -1, -1):
+        print(A[j][i],end=' ')
+    print()
